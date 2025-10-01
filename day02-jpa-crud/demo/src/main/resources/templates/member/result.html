@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입 결과</title>
+</head>
+<body>
+<div>
+    <h2>가입 결과</h2>
+    아이디: <span th:text="${dto.user_id}"></span><br>
+    이름: <span th:text="${dto.user_name}"></span><br>
+    비밀번호: <span th:text="${dto.user_pw}"></span><br>
+    비밀번호 확인: <span th:text="${dto.user_pw_check}"></span><br>
+    성별: <span th:text="${dto.gender}"></span><br>
+    나이: <span th:text="${age}"></span><br>
+    기계여부: <span th:text="${dto.machine}"></span><br>
+    생일: <span th:text="${dto.year} + '년 ' + ${dto.month} + '월 ' + ${dto.day} + '일'"></span><br>
+
+    취미:
+    <span th:each="h : ${dto.hobby}">
+        <span th:text="${h}"></span>
+    </span><br>
+
+    업로드 파일명:
+    <span th:text="${dto.up_file.originalFilename}"></span><br>
+    파일 크기(byte):
+    <span th:text="${dto.up_file.size}"></span><br>
+</div>
+</body>
+</html>
